@@ -2,7 +2,7 @@
 
 function getArrayParams(...arr) {
 	let min = Infinity;
-	let max = Infinity;
+	let max = -Infinity;
 	let sum = 0;
 
 	for (let i = 0; i < arr.length; i++) {
