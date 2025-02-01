@@ -1,4 +1,4 @@
-Задача 1
+//Задача 1
 
 function getArrayParams(...arr) {
 	let min = Infinity;
@@ -33,7 +33,7 @@ console.log(
 console.log(getArrayParams(5), "expect{ min: 5, max: 5, avg: 5 }");
 
 
-Задача 2
+//Задача 2
 
 function summElementsWorker(...arr) {
 	if (arr.length === 0) return 0;
@@ -114,7 +114,7 @@ console.log(averageEvenElementsWorker(1, 2, 3, 4, 5, 6, 7, 8, 9)); // [2, 4, 6, 
 console.log(averageEvenElementsWorker(15, 97, 85, 64, 67, 10, 69, 40, 15, 35)); // [64, 10, 40] => 38
 
 
-Задача 3
+//Задача 3
 
 function summElementsWorker(...arr) {
 	if (arr.length === 0) return 0;
