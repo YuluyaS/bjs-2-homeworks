@@ -88,3 +88,8 @@ picknick.state = 10;
 console.log(picknick.state); //10
 picknick.fix();
 console.log(picknick.state); //15
+
+
+//Задача 2
+
+
