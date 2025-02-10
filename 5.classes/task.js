@@ -1,3 +1,4 @@
+
 //Задача 1
 
 class PrintEditionItem {
@@ -35,10 +36,10 @@ const sherlock = new PrintEditionItem(
   1008,
 );
 
-console.log(sherlock.releaseDate); //2019
-console.log(sherlock.state); //100
+console.log("sherlock.releaseDate=" + sherlock.releaseDate); //2019
+console.log("sherlock.state=" + sherlock.state); //100
 sherlock.fix();
-console.log(sherlock.state); //100
+console.log("sherlock.fix=" + sherlock.state); //100
 
 class Magazine extends PrintEditionItem {
   constructor(name, releaseDate, pagesCount) {
@@ -48,7 +49,7 @@ class Magazine extends PrintEditionItem {
 }
 
 class Book extends PrintEditionItem {
-  constructor(name, releaseDate, pagesCount, author) {
+  constructor(author, name, releaseDate, pagesCount) {
     super(name, releaseDate, pagesCount);
     this.author = author;
     this.type = "book";
@@ -56,22 +57,22 @@ class Book extends PrintEditionItem {
 }
 
 class NovelBook extends Book {
-  constructor(name, releaseDate, pagesCount, author) {
-    super(name, releaseDate, pagesCount, author);
+  constructor(author, name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCount);
     this.type = "novel";
   }
 }
 
 class FantasticBook extends Book {
-  constructor(name, releaseDate, pagesCount, author) {
-    super(name, releaseDate, pagesCount, author);
+  constructor(author, name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCount);
     this.type = "fantastic";
   }
 }
 
 class DetectiveBook extends Book {
-  constructor(name, releaseDate, pagesCount, author) {
-    super(name, releaseDate, pagesCount, author);
+  constructor(author, name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCount);
     this.type = "detective";
   }
 }
@@ -121,27 +122,27 @@ class Library {
 const library = new Library("Библиотека имени Ленина");
 
 const detective = new DetectiveBook(
+  "Артур Конан Дойл",
   "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
   2019,
   1008,
-  "Артур Конан Дойл",
 );
 
 library.addBook(detective);
 
 library.addBook(
   new FantasticBook(
+    "Аркадий и Борис Стругацкие",
     "Пикник на обочине",
     1972,
     168,
-    "Аркадий и Борис Стругацкие",
   ),
 );
 
 //name, releaseDate, pagesCount, author
 
 //library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
-library.addBook(new NovelBook("Машина времени", 1895, 138, "Герберт Уэллс"));
+library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
 library.addBook(new Magazine("Мурзилка", 1924, 60));
 
 console.log(library.findBookBy("name", "Властелин колец")); //null
@@ -155,4 +156,3 @@ library.giveBookByName("Машина времени");
 //console.log("Машина времени=" + library.findBookBy("name", "Машина времени")); //null
 
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
-
